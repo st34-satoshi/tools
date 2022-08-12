@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>mini games</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,9 +8,21 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%# for mobile phone view %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= favicon_link_tag('smart_toy.svg', {:type => 'image/svg'}) %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="h-100">
+    <%= render "layouts/header" %>
+
+    <div class="container main-body">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+
   </body>
 </html>
