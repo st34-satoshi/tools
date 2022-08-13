@@ -1,2 +1,14 @@
-<div class="text-primary">hello index
-</div>
+<ul class="list-group mt-3">
+  <li class="list-group-item">
+    <%= link_to root_path, class: "disable-a-tag link-dark" do %>
+      <div class="d-flex flex-row bd-highlight mb-3">
+        <div class="p-2 bd-highlight align-self-center">
+          <%= image_tag 'remember-pi/pi.png', width: 25, class: "align-text-middle" %>
+        </div>
+        <div class="p-2 bd-highlight">
+          <h4>Remember Pi</h4>
+          <div>Flex item 2</div>
+        </div>
+      </div>
+    <% end %>
+</ul>

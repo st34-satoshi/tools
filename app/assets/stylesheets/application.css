@@ -18,3 +18,7 @@
  .main-body {
      min-height: 100%;
  }
+
+ .disable-a-tag{
+    text-decoration: none;
+ }
