@@ -24,6 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+  config.assets.js_compressor = :terser
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
@@ -117,4 +118,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # return static files of css and js
+  config.public_file_server.enabled = true
 end

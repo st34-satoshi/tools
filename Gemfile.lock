@@ -80,6 +80,7 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     erubi (1.11.0)
+    execjs (2.8.1)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -176,6 +177,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    terser (1.1.12)
+      execjs (>= 0.3.0, < 3)
     thor (1.2.1)
     tilt (2.0.11)
     turbolinks (5.2.1)
@@ -221,6 +224,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
+  terser
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
