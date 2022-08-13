@@ -10,7 +10,10 @@ development:
   <<: *default
   database: mini_games_development
 
-
 test:
   <<: *default
   database: mini_games_test
+
+production:
+  <<: *default
+  database: mini_games_production
