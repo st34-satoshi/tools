@@ -9,9 +9,9 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update -qq && apt-get install -y nodejs yarn postgresql-client vim
 
 
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+WORKDIR /mini-games
+COPY Gemfile /mini-games/Gemfile
+COPY Gemfile.lock /mini-games/Gemfile.lock
 RUN bundle install
 
 # Add a script to be executed every time the container starts.

@@ -12,7 +12,7 @@ services:
     stdin_open: true # for biding.pry
     tty: true # for biding.pry
     volumes:
-      - .:/myapp
+      - .:/mini-games
     ports:
       - "3000:3000"
     depends_on:
