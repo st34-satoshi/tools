@@ -12,5 +12,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-//= require jquery/dist/jquery.js
+//= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap.js
+
+// require('jquery')
