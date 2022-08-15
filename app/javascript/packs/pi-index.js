@@ -3,9 +3,16 @@
 let ANSWER = '';
 let CURRENT_DIGIT = 0;
 
+const WrongAudio = new Audio();
+WrongAudio.src = 'remember-pi/Quiz-Wrong.mp3';
+
 function setAnswer(){
     const ans = $('#pi-answer').text().replace(/[^0-9]/g, ''); // remove non-numeric characters
     ANSWER = ans;
+}
+
+function wrongSound(){
+    WrongAudio.play();
 }
 
 function updateEnteredAnswer(n){
@@ -19,8 +26,7 @@ function updateEnteredAnswer(n){
         $('#current-digit').text(CURRENT_DIGIT);
     }else{
         // wrong answer
-        // TODO: wrong sound
-        console.log('wrong');
+        wrongSound();
     }
 }
 
