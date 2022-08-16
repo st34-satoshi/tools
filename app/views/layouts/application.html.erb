@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html class="h-100">
+  <head>
+    <title>mini games</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%# for mobile phone view %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= favicon_link_tag('smart_toy.svg', {:type => 'image/svg'}) %>
+
+    <%# for fontawesome %>
+    <script src="https://kit.fontawesome.com/099e8af6ba.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="h-100">
+    <%= render "layouts/header" %>
+
+    <div class="container main-body">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+
+  </body>
+</html>
