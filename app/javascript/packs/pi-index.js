@@ -15,6 +15,10 @@ function wrongSound(){
     WrongAudio.play();
 }
 
+function alertCurrentAnswer(){
+    alert(`anser is ${ANSWER[CURRENT_DIGIT]}`);
+}
+
 function updateCurrentDigit(d){
     CURRENT_DIGIT = d;
     $('#current-digit').text(CURRENT_DIGIT);
@@ -68,6 +72,9 @@ function setButtons(){
     });
     $('#button-space').on('click', function() {
         addEnteredAnser('space');
+    });
+    $('#button-answer').on('click', function() {
+        alertCurrentAnswer();
     });
 
     // start from button
