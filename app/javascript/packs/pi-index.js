@@ -15,33 +15,54 @@ function wrongSound(){
     WrongAudio.play();
 }
 
+function updateCurrentDigit(d){
+    CURRENT_DIGIT = d;
+    $('#current-digit').text(CURRENT_DIGIT);
+}
+
 function updateEnteredAnswer(n){
     // check if the answer is correct or not.
     if(ANSWER[CURRENT_DIGIT] === String(n)){
         // correct answer
-        const current = $('#entered-answer').text();
-        $('#entered-answer').text(current + n);
+        const current = $('#entered-answer').html();
+        $('#entered-answer').html(current + n);
 
-        CURRENT_DIGIT += 1;
-        $('#current-digit').text(CURRENT_DIGIT);
+        updateCurrentDigit(CURRENT_DIGIT + 1);
     }else{
         // wrong answer
         wrongSound();
     }
 }
 
+function resetEnteredAnswer(from_number){
+    const a = ANSWER.slice(0, from_number);
+    let html = '';
+    for(let i=0;i<a.length;i++){
+        html += a[i];
+        if(i % 30 === 29){
+            html += '<br>'
+        }
+    }
+    $('#entered-answer').html(html);
+    updateCurrentDigit(from_number);
+}
+
 function setButtons(){
     // number button
     for(let i=0;i<=9;i++){
         $(`#button-${i}`).on('click', function() {
-            console.log('button is clicked' + i);
             updateEnteredAnswer(i);
         });
     }
+
+    // start from button
+    $('#start-from-update-button').on('click', function() {
+        const from = $('#start-from-id').val();
+        resetEnteredAnswer(Number(from));
+    });
 }
 
 $(function() {
-    console.log('hello js i');
     setAnswer();
     setButtons();
 });
