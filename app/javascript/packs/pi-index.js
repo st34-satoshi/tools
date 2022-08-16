@@ -34,6 +34,15 @@ function updateEnteredAnswer(n){
     }
 }
 
+function addEnteredAnser(type){
+    const current = $('#entered-answer').html();
+    if(type === 'newLine'){
+        $('#entered-answer').html(current + '<br>');
+    }else if(type === 'space'){
+        $('#entered-answer').html(current + '&ensp;');
+    }
+}
+
 function resetEnteredAnswer(from_number){
     const a = ANSWER.slice(0, from_number);
     let html = '';
@@ -54,6 +63,12 @@ function setButtons(){
             updateEnteredAnswer(i);
         });
     }
+    $('#button-new-line').on('click', function() {
+        addEnteredAnser('newLine');
+    });
+    $('#button-space').on('click', function() {
+        addEnteredAnser('space');
+    });
 
     // start from button
     $('#start-from-update-button').on('click', function() {
