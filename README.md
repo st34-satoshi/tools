@@ -1,5 +1,8 @@
 # mini games
 
+## See
+[Mini-Games](https://mini-games.stu345.com/)
+
 ## Run
 - `docker-compose build`
 - `docker-compose run web yarn install`
