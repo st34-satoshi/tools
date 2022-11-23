@@ -1,4 +1,24 @@
-<%= javascript_pack_tag 'pi-index' %>
+<%= javascript_pack_tag 'minesweeper' %>
 <h2 class="mt-3">
 Minesweeper
 </h2>
+
+<div class="d-flex flex-row bd-highlight mb-3">
+  <div class="p-2 bd-highlight border">time</div>
+  <div class="p-2 bd-highlight border">😀</div>
+  <div class="p-2 bd-highlight border">4</div>
+</div>
+
+<div>
+<% for i in 1..6 do %>
+  <div class="d-flex flex-row bd-highlight">
+    <% for i in 1..6 do %>
+    <button type="button" class="btn btn-secondary cell-size"></button>
+    <% end %>
+  </div>
+<% end %>
+</div>
+
+<button type="button" class="btn">
+  <i class="fa-solid fa-flag"></i>
+</button>
