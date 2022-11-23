@@ -1,12 +1,14 @@
 // javascript for minesweeper
 
-console.log('hello minesweeper');
-
 let cells = Array(6*6);
 
 
 // decide bomb position and cell number
 function setCells(){
+    // reset
+    for(let i=0;i<cells.length;i++){
+        cells[i] = 0;
+    }
     // bomb position
     let bombPositions = decideBombPosition(); // index of bomb
     for(let i=0;i<bombPositions.length;i++){
@@ -41,9 +43,9 @@ function setCells(){
         cells[i] = aroundBombNumber;
     }
     // show cells
-    for(let i=0;i<cells.length;i++){
-        $(`#cell${i}`).text(cells[i]);
-    }
+    // for(let i=0;i<cells.length;i++){
+    //     $(`#cell${i}`).text(cells[i]);
+    // }
 }
 
 function decideBombPosition(){
@@ -60,6 +62,26 @@ function decideBombPosition(){
     return bombPositions;
 }
 
+function setButtonEvent(){
+    for(let i=0;i<6*6;i++){
+        $(`#cell${i}`).on('click', function() {
+            $(this).text(cells[i]);
+            if(cells[i] === 'b'){
+                $("#home-face").text('😵');
+            }
+        });
+    }
+    $("#home-face").on('click', function() {
+        // reset
+        setCells();
+        $("#home-face").text('😀');
+        for(let i=0;i<cells.length;i++){
+            $(`#cell${i}`).text('');
+        }
+    });
+}
+
 $(function() {
     setCells();
+    setButtonEvent();
 });
