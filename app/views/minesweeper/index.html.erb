@@ -10,10 +10,10 @@ Minesweeper
 </div>
 
 <div>
-<% for i in 1..6 do %>
+<% for i in 0..5 do %>
   <div class="d-flex flex-row bd-highlight">
-    <% for i in 1..6 do %>
-    <button type="button" class="btn btn-secondary cell-size"></button>
+    <% for j in 0..5 do %>
+    <button type="button" class="btn btn-secondary cell-size" id="cell<%= "#{i*6+j}" %>"></button>
     <% end %>
   </div>
 <% end %>
