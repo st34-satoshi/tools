@@ -2,3 +2,6 @@
 
 pin 'application', preload: true
 pin 'bootstrap', preload: true
+
+pin 'home/pi_index'
+pin 'home/minesweeper'

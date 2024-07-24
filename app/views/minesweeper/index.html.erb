@@ -1,4 +1,11 @@
-<%= javascript_pack_tag 'minesweeper' %>
+<% content_for :importmap_tag do %>
+  <%= javascript_importmap_tags 'home/minesweeper' %>
+<% end %>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+
 <h2 class="mt-3">
 Minesweeper
 </h2>

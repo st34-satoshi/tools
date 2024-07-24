@@ -8,7 +8,13 @@
 
     <%= stylesheet_link_tag 'application' %>
     <%= stylesheet_link_tag "bootstrap" %>
-    <%= javascript_importmap_tags 'application' %>
+    
+    <% if content_for?(:importmap_tag) %>
+      <%= yield(:importmap_tag) %>
+    <% else %>
+      <%= javascript_importmap_tags 'application' %>
+    <% end %>
+    <%= yield(:additional_scripts) %>
 
     <%# for mobile phone view %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
