@@ -1,19 +1,20 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  host: db
-  username: postgres
-  password: password
+  adapter: mysql2
+  encoding: utf8mb4
   pool: 5
+  username: root
+  password: mysql
+  host: db
+  port: 3306
 
 development:
   <<: *default
-  database: mini_games_development
+  database: tools_development
 
 test:
   <<: *default
-  database: mini_games_test
+  database: tools_test
 
 production:
   <<: *default
-  database: mini_games_production
+  database: s_production
