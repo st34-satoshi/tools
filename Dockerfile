@@ -1,17 +1,11 @@
 # syntax=docker/dockerfile:1
-FROM ruby:2.7.6
+FROM ruby:3.3.4
 
-# for installing yarn
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update -qq
 
-RUN apt-get update -qq && apt-get install -y nodejs yarn postgresql-client vim
-
-
-WORKDIR /mini-games
-COPY Gemfile /mini-games/Gemfile
-COPY Gemfile.lock /mini-games/Gemfile.lock
+WORKDIR /tools
+COPY Gemfile /tools/Gemfile
+COPY Gemfile.lock /tools/Gemfile.lock
 RUN bundle install
 
 # Add a script to be executed every time the container starts.

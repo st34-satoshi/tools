@@ -1,11 +1,10 @@
-# mini games
+# Tools
 
 ## See
 [tools](https://tools.stu345.com/)
 
 ## Run
 - `docker compose build`
-- `docker compose run web yarn install`
 - `docker compose run web rails db:create`
 - `docker compose run web rails db:migrate RAILS_ENV=development`
 - `docker compose up`

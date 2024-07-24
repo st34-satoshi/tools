@@ -21,6 +21,6 @@ services:
     volumes:
       - .:/tools
     ports:
-      - "3000:3000"
+      - "3024:3000"
     depends_on:
       - db
