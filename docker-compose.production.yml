@@ -17,7 +17,7 @@ services:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && RAILS_ENV=production bundle exec rails assets:precompile && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - .:/mini-games
+      - .:/tools
     # ports:
     #   - "3089:3000"
     depends_on:

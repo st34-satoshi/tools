@@ -1,7 +1,7 @@
 # mini games
 
 ## See
-[Mini-Games](https://mini-games.stu345.com/)
+[tools](https://tools.stu345.com/)
 
 ## Run
 - `docker compose build`
