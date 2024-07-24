@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: s_production
+  database: tools_production
