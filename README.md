@@ -9,6 +9,7 @@
 - `docker compose run web rails db:migrate RAILS_ENV=development`
 - `docker compose up`
 - `open http://localhost:3000`
+- `docker compose exec web bundle exec sidekiq`
 
 ### In Production
 - `docker compose -f docker-compose.production.yml build`

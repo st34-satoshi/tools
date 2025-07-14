@@ -18,5 +18,11 @@ module MiniGames
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    # Use Sidekiq as the queuing backend for Active Job
+    config.active_job.queue_adapter = :sidekiq
+    
+    # Redis configuration for Sidekiq
+    config.redis_url = ENV.fetch('REDIS_URL', 'redis://redis:6379/0')
   end
 end

@@ -14,6 +14,10 @@ class User < ApplicationRecord
     end
   end
 
+  def self.save_images_async
+    SaveUserImagesJob.perform_later
+  end
+
   def self.urls
     User.all.map do |user|
       user.avatar_url
